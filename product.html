@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | NaturaGlow Skincare</title>
+  <meta name="description" content="Explore product ingredients, benefits, and reviews for NaturaGlow organic luxury skincare." />
+  <meta property="og:title" content="Product Details | NaturaGlow" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✨ Free Shipping Across India on Orders Above ₹499 | Use Code: <strong>NATURA10</strong> for 10% Off
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">NaturaGlow</a>
+      
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/shop.html" class="active">Shop</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact & FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/cart.html" class="icon-btn" title="Shopping Bag">
+          🛍️
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">NaturaGlow</span>
+      <button class="close-drawer" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="/">Home</a>
+      <a href="/shop.html">Shop All Products</a>
+      <a href="/about.html">About Brand Story</a>
+      <a href="/contact.html">Contact & Support</a>
+      <a href="/cart.html">Shopping Cart</a>
+    </nav>
+  </div>
+
+  <!-- Product Detail Section -->
+  <main class="container" style="padding: 4rem 0;" id="product-detail-container">
+    <!-- Rendered dynamically via JS -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NaturaGlow</h4>
+          <p>Pure organic luxury skincare inspired by ancient Indian botanicals.</p>
+          <p><strong>Email:</strong> support@naturaglowskincare.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Shop All</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact & FAQ</a>
+            <a href="/cart.html">Cart</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Serums & Oils</a>
+            <a href="/shop.html">Mists & Toners</a>
+            <a href="/shop.html">Masks & Scrubs</a>
+            <a href="/shop.html">Sun Care</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <div class="footer-links">
+            <a href="/contact.html">Shipping & Returns</a>
+            <a href="/contact.html">Privacy Policy</a>
+            <a href="/contact.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NaturaGlow Skincare (naturaglowskincare.com). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = Number(urlParams.get('id')) || 1;
+      const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0];
+
+      // Update page title
+      document.title = `${product.name} | NaturaGlow Skincare`;
+
+      const container = document.getElementById('product-detail-container');
+      container.innerHTML = `
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start;" class="product-detail-grid">
+          <div style="background: #F7F5F0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+            <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 450px; object-fit: cover;" />
+          </div>
+          <div>
+            <span class="section-tag">${product.category}</span>
+            <h1 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">${product.name}</h1>
+            
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+              <span style="font-size: 1rem; color: var(--color-primary); font-weight: 600;">⭐ ${product.rating} (${product.reviewsCount} verified reviews)</span>
+              <span>•</span>
+              <span style="color: var(--color-text-muted);">Size: ${product.volume}</span>
+            </div>
+
+            <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem;">
+              <span style="font-size: 2rem; font-weight: 700; color: var(--color-text);">₹${product.price}</span>
+              <span style="font-size: 1.2rem; color: var(--color-text-muted); text-decoration: line-through;">₹${product.originalPrice}</span>
+              <span style="background-color: #E2F0EB; color: var(--color-primary); font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px;">Save ₹${product.originalPrice - product.price}</span>
+            </div>
+
+            <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">${product.description}</p>
+
+            <div style="background: #F4F7F5; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+              <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">Skin Type Suitability:</p>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1rem;">${product.skinType}</p>
+              
+              <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text);">Key Hero Ingredients:</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                ${product.ingredients.map(ing => `<span style="background: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--color-border); color: var(--color-text);">${ing}</span>`).join('')}
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: white;">
+                <button type="button" onclick="adjustQty(-1)" style="padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-size: 1rem;">-</button>
+                <input type="number" id="qty-input" value="1" min="1" max="10" style="width: 50px; text-align: center; border: none; font-weight: 600; font-size: 1rem;" />
+                <button type="button" onclick="adjustQty(1)" style="padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-size: 1rem;">+</button>
+              </div>
+              <button class="btn btn-primary" onclick="handleAdd(${product.id})" style="flex-grow: 1; padding: 0.9rem 2rem;">Add to Bag — ₹${product.price}</button>
+            </div>
+
+            <div style="margin-top: 2.5rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--color-text-muted); font-size: 0.9rem;">
+              <div>🚚 <strong>Free Shipping</strong> on all prepaid orders across India above ₹499.</div>
+              <div>🔄 <strong>7-Day Returns</strong> & easy exchanges if unopened.</div>
+              <div>🌿 <strong>100% Pure & Ethical</strong> Ayurvedic botanical formulation.</div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Add responsive grid style for desktop
+      const style = document.createElement('style');
+      style.textContent = `
+        @media(min-width: 768px) {
+          .product-detail-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+
+    window.adjustQty = function(change) {
+      const input = document.getElementById('qty-input');
+      let val = Number(input.value) + change;
+      if (val < 1) val = 1;
+      if (val > 10) val = 10;
+      input.value = val;
+    };
+
+    window.handleAdd = function(id) {
+      const qty = Number(document.getElementById('qty-input').value) || 1;
+      addToCart(id, qty);
+    };
+  </script>
+</body>
+</html>

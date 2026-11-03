@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop All Organic Skincare Products | NaturaGlow</title>
+  <meta name="description" content="Browse our complete collection of luxury organic skincare essentials, facial serums, mists, and sunscreens. Free shipping above ₹499." />
+  <meta property="og:title" content="Shop All Organic Skincare | NaturaGlow" />
+  <meta property="og:description" content="Browse our complete collection of luxury organic skincare essentials." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✨ Free Shipping Across India on Orders Above ₹499 | Use Code: <strong>NATURA10</strong> for 10% Off
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">NaturaGlow</a>
+      
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/shop.html" class="active">Shop</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact & FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/cart.html" class="icon-btn" title="Shopping Bag">
+          🛍️
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">NaturaGlow</span>
+      <button class="close-drawer" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="/">Home</a>
+      <a href="/shop.html">Shop All Products</a>
+      <a href="/about.html">About Brand Story</a>
+      <a href="/contact.html">Contact & Support</a>
+      <a href="/cart.html">Shopping Cart</a>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <section style="background-color: #F4F7F5; padding: 3rem 0; text-align: center; border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <span class="section-tag">Catalog</span>
+      <h1 class="section-title" style="margin-bottom: 0.5rem;">Explore All Products</h1>
+      <p class="section-desc">Clean, botanical formulations crafted to nurture your skin's natural radiance.</p>
+    </div>
+  </section>
+
+  <!-- Shop Content -->
+  <section class="products-section" style="padding: 4rem 0;">
+    <div class="container">
+      
+      <!-- Category Filter Tabs -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;" id="filter-container">
+        <button class="btn btn-primary filter-btn" data-category="All" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">All Products</button>
+        <button class="btn btn-outline filter-btn" data-category="Serums & Oils" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Serums & Oils</button>
+        <button class="btn btn-outline filter-btn" data-category="Mists & Toners" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Mists & Toners</button>
+        <button class="btn btn-outline filter-btn" data-category="Masks & Scrubs" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Masks & Scrubs</button>
+        <button class="btn btn-outline filter-btn" data-category="Sun Care" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Sun Care</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="shop-products-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NaturaGlow</h4>
+          <p>Pure organic luxury skincare inspired by ancient Indian botanicals.</p>
+          <p><strong>Email:</strong> support@naturaglowskincare.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Shop All</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact & FAQ</a>
+            <a href="/cart.html">Cart</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Serums & Oils</a>
+            <a href="/shop.html">Mists & Toners</a>
+            <a href="/shop.html">Masks & Scrubs</a>
+            <a href="/shop.html">Sun Care</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <div class="footer-links">
+            <a href="/contact.html">Shipping & Returns</a>
+            <a href="/contact.html">Privacy Policy</a>
+            <a href="/contact.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NaturaGlow Skincare (naturaglowskincare.com). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('shop-products-grid');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      function renderProducts(category = 'All') {
+        const filtered = category === 'All' 
+          ? PRODUCTS 
+          : PRODUCTS.filter(p => p.category === category);
+
+        grid.innerHTML = filtered.map(p => `
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge">${p.badge}</span>
+              <img src="${p.image}" alt="${p.name}" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <span class="product-category">${p.category}</span>
+              <h3 class="product-name"><a href="/product.html?id=${p.id}">${p.name}</a></h3>
+              <p class="product-desc">${p.shortDesc}</p>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--color-text-muted);">
+                <span>⭐ ${p.rating} (${p.reviewsCount} reviews)</span>
+                <span>•</span>
+                <span>${p.volume}</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-wrap">
+                  <span class="product-price">₹${p.price}</span>
+                  <span class="product-orig-price">₹${p.originalPrice}</span>
+                </div>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="addToCart(${p.id})">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-outline');
+          });
+          btn.classList.remove('btn-outline');
+          btn.classList.add('btn-primary');
+          renderProducts(btn.dataset.category);
+        });
+      });
+
+      renderProducts('All');
+    });
+  </script>
+</body>
+</html>

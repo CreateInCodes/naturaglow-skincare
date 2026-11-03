@@ -1,0 +1,13 @@
+# Dependencies & Node modules (if any local tooling is used)
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# IDE settings
+.vscode/
+.idea/

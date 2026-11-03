@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & FAQ | NaturaGlow Skincare</title>
+  <meta name="description" content="Get in touch with NaturaGlow customer support. Find answers to shipping, orders, and organic skincare FAQs." />
+  <meta property="og:title" content="Contact & FAQ | NaturaGlow" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✨ Free Shipping Across India on Orders Above ₹499 | Use Code: <strong>NATURA10</strong> for 10% Off
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">NaturaGlow</a>
+      
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/shop.html">Shop</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html" class="active">Contact & FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/cart.html" class="icon-btn" title="Shopping Bag">
+          🛍️
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">NaturaGlow</span>
+      <button class="close-drawer" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="/">Home</a>
+      <a href="/shop.html">Shop All Products</a>
+      <a href="/about.html">About Brand Story</a>
+      <a href="/contact.html">Contact & Support</a>
+      <a href="/cart.html">Shopping Cart</a>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <section style="background-color: #F4F7F5; padding: 4rem 0; text-align: center; border-bottom: 1px solid var(--color-border);">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-tag">Customer Support</span>
+      <h1 class="section-title" style="margin-bottom: 1rem;">We're Here to Help</h1>
+      <p class="section-desc">Have questions about your skincare routine or order? Reach out to our dedicated support team.</p>
+    </div>
+  </section>
+
+  <!-- Contact & FAQ Content -->
+  <main class="container" style="padding: 5rem 0;">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 4rem;" class="contact-grid">
+      
+      <!-- Contact Info & Form -->
+      <div>
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-text);">Send Us a Message</h2>
+        
+        <div style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--color-text-muted);">
+          <div>📞 <strong>Support Phone:</strong> +91 98765 43210 (Mon-Sat, 10am - 6pm IST)</div>
+          <div>✉️ <strong>Support Email:</strong> support@naturaglowskincare.com</div>
+          <div>📍 <strong>Registered Office:</strong> Connaught Place, New Delhi, India 110001</div>
+        </div>
+
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" style="background: var(--color-surface); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; gap: 1.25rem;">
+          <div>
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Your Name *</label>
+            <input type="text" id="c-name" required placeholder="Priya Sharma" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Email Address *</label>
+            <input type="email" id="c-email" required placeholder="priya@example.com" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Your Message *</label>
+            <textarea id="c-msg" required rows="4" placeholder="How can we assist you with your skincare routine?" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; font-family: inherit;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="padding: 1rem; font-size: 1rem;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- FAQ Section -->
+      <div>
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-text);">Frequently Asked Questions</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">Are NaturaGlow products suitable for sensitive skin?</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Yes! All our formulas are dermatologically tested, free from synthetic fragrances, and use gentle botanical ingredients suitable for all skin types.</p>
+          </div>
+
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">What is the delivery timeline across India?</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">We ship via express courier partners. Standard delivery takes 3 to 5 business days across metro and tier-1/tier-2 cities in India.</p>
+          </div>
+
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">Do you offer Cash on Delivery (COD)?</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Yes, Cash on Delivery is available across 25,000+ pin codes in India with no extra charges.</p>
+          </div>
+
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">How do I track my order?</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Once your order ships, we send a tracking link directly via WhatsApp and email so you can track your package in real-time.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NaturaGlow</h4>
+          <p>Pure organic luxury skincare inspired by ancient Indian botanicals.</p>
+          <p><strong>Email:</strong> support@naturaglowskincare.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Shop All</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact & FAQ</a>
+            <a href="/cart.html">Cart</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="/shop.html">Serums & Oils</a>
+            <a href="/shop.html">Mists & Toners</a>
+            <a href="/shop.html">Masks & Scrubs</a>
+            <a href="/shop.html">Sun Care</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <div class="footer-links">
+            <a href="/contact.html">Shipping & Returns</a>
+            <a href="/contact.html">Privacy Policy</a>
+            <a href="/contact.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NaturaGlow Skincare (naturaglowskincare.com). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/products.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    window.handleContactSubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('c-name').value;
+      showToast(`Thank you ${name}! Your message has been sent. We'll reply within 24 hours.`);
+      document.getElementById('contact-form').reset();
+    };
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @media(min-width: 900px) {
+        .contact-grid { grid-template-columns: 1fr 1fr; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
